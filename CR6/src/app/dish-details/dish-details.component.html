@@ -1,1 +1,15 @@
-<p>dish-details works!</p>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0" *ngIf="dish1">
+        <div class="col-md-4">
+            <img src="{{dish1.image}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ dish1.name}}</h5>
+                <p class="card-text">{{dish1.description}}</p>
+                <p class="card-text">Price: {{dish1.price}}€</p>
+                <button class="btn btn-success" (click)="addToCart()">Order</button>
+            </div>
+        </div>
+    </div>
+</div>

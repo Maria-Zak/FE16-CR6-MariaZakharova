@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 import { dishes } from '../dishes';
 import { IDishes } from '../IDishes';
+
 
 @Component({
   selector: 'app-menu-page',
@@ -10,9 +12,13 @@ import { IDishes } from '../IDishes';
 export class MenuPageComponent implements OnInit {
   dishes:IDishes[]=dishes;
 
-  constructor() { }
+  constructor(private cartService:CartService) { }
 
-  ngOnInit(): void {
+  addToCart(index:number){
+    window.alert("Great choice!");
+    this.cartService.addToCart(this.dishes[index])
   }
+
+  ngOnInit(): void { }
 
 }

@@ -14,7 +14,7 @@
                     <div class="card-body d-flex justify-content-around p-0">
                         <ng-template [ngIf]="dish.availability==true" [ngIfElse]="none">
                             <button class="btn btn-secondary"><a routerLink="dishes/{{i}}" class="text-decoration-none text-white">Details</a></button>
-                            <button class="btn btn-success">Order</button>
+                            <button class="btn btn-success" (click)="addToCart(i)">Order</button>
                         </ng-template>
                         <ng-template #none>
                             <p class="text-danger text-center fs-4">This product is not available</p>

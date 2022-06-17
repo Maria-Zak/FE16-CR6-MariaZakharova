@@ -9,6 +9,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { DishDetailsComponent } from './dish-details/dish-details.component';
+import { CartComponent } from './cart/cart.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { DishDetailsComponent } from './dish-details/dish-details.component';
     HomePageComponent,
     AboutPageComponent,
     MenuPageComponent,
-    DishDetailsComponent
+    DishDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

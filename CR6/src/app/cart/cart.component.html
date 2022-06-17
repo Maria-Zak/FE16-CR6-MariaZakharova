@@ -1,0 +1,64 @@
+<div class="container m-5">
+    <div class="row">
+        <div class="card mb-3 col-8 p-0">
+            <div class="heading bg-light">
+                <h2 class="text-center">Cart</h2>
+            </div>
+            <div class="row g-0" *ngFor="let item of items">
+                <div class="col-md-4">
+                    <img src="{{item.image}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><span>{{ item.name }}</span></h5>
+                        <p class="card-text"><span>Price: {{ item.price }} €</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="total col-4">
+            <div class="card mb-3">
+                <div class="heading bg-light">
+                    <h2 class="text-center">Summary</h2>
+                </div>
+                <div class="card-body ">
+                    <div class="d-flex justify-content-between">
+                        <p class="card-text">Products </p>
+                        <p>{{ priceTotal.toFixed(2) }}€</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="card-text">Service </p>
+                        <p>{{service.toFixed(2)}}€</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="card-text">Discount </p>
+                        <ng-template [ngIf]="priceTotal>40" [ngIfElse]="none">
+                            <p>{{discount.toFixed(2)}}€</p>
+                        </ng-template>
+                        <ng-template #none>
+                            <p class="card-text">0.00€</p>
+                        </ng-template>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Total</h5>
+                        <p>{{priceFinal.toFixed(2)}}€</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container m-5">
+    <h1>Order Form</h1>
+    <form [formGroup]="info" (ngSubmit)="onSubmit()">
+        <label for="name">Name</label><br>
+        <input style="width: 100%;" type="text" placeholder="Enter name" formControlName="name"><br>
+        <label for=" Address">Address</label><br>
+        <input style="width: 100%;" type="text" placeholder="Enter address" formControlName="address"><br>
+        <label for="email">Email</label><br>
+        <input style="width: 100%;" type="text" placeholder="email@example.com" formControlName="email"><br>
+        <br>
+        <input type="submit" value="Submit" class="btn btn-outline-success ">
+    </form>
+</div>
