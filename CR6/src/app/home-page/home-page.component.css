@@ -1,0 +1,11 @@
+.heroimg {
+    background-image: url(https://cdn.pixabay.com/photo/2020/03/21/02/26/pizza-4952509_1280.jpg);
+    height: 70vh;
+    background-size: cover;
+    background-position: bottom center;
+    font-family: 'Great Vibes', cursive;
+}
+
+.container {
+    font-family: 'Great Vibes', cursive;
+}
