@@ -24,5 +24,9 @@ export class CartService {
   getTotal(){
     return this.sum
   }
+  clearTotal(){
+    this.sum=0;
+    return this.sum
+  }
   
 }

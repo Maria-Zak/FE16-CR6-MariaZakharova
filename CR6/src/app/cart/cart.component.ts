@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { IDishes } from '../IDishes';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -10,17 +11,29 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  info = new FormGroup({
-    name: new FormControl('',Validators.required),
-    address: new FormControl('',Validators.required),
-    email:new FormControl('',Validators.required),
-
+  checkoutForm = this.fb.group({
+    name: '',
+    address: '',
+    email: ''
   });
+
+  // info = new FormGroup({
+  //   name: new FormControl('',Validators.required),
+  //   address: new FormControl('',Validators.required),
+  //   email:new FormControl('',Validators.required),
+  // });
    onSubmit(){
-     if(this.info.valid){
-    let a:any = this.info.value;
-    console.log(a)
-   }
+    console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.items = this.cartService.clearCart();
+    this.priceTotal=this.cartService.clearTotal();
+    this.service=this.cartService.clearTotal();
+    this.discount=this.cartService.clearTotal();
+    this.priceFinal=this.cartService.clearTotal();
+    this.checkoutForm.reset()
+  //    if(this.info.valid){
+  //   let a:any = this.info.value;
+  //   console.log(a)
+  //  }
   }
 
   items:IDishes[]=[];
@@ -30,7 +43,7 @@ export class CartComponent implements OnInit {
   priceFinal:number=0
 
   
-  constructor(private cartService:CartService) { }
+  constructor(private cartService:CartService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.items=this.cartService.getItems()

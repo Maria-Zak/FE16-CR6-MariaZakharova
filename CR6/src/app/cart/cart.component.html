@@ -51,7 +51,7 @@
 </div>
 <div class="container m-5">
     <h1>Order Form</h1>
-    <form [formGroup]="info" (ngSubmit)="onSubmit()">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
         <label for="name">Name</label><br>
         <input style="width: 100%;" type="text" placeholder="Enter name" formControlName="name"><br>
         <label for=" Address">Address</label><br>
