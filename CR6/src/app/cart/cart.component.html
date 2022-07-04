@@ -1,6 +1,6 @@
-<div class="container m-5">
-    <div class="row">
-        <div class="card mb-3 col-8 p-0">
+<div class="container">
+    <div class="row mt-5">
+        <div class="card mb-3 col-lg-8 col-md-6 p-0">
             <div class="heading bg-light">
                 <h2 class="text-center">Cart</h2>
             </div>
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="total col-4">
+        <div class="total col-lg-4 col-md-6">
             <div class="card mb-3">
                 <div class="heading bg-light">
                     <h2 class="text-center">Summary</h2>
@@ -48,8 +48,6 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container m-5">
     <h1>Order Form</h1>
     <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
         <label for="name">Name</label><br>
@@ -59,6 +57,6 @@
         <label for="email">Email</label><br>
         <input style="width: 100%;" type="text" placeholder="email@example.com" formControlName="email"><br>
         <br>
-        <input type="submit" value="Submit" class="btn btn-outline-success ">
+        <input type="submit" value="Submit" class="btn btn-outline-success mb-5">
     </form>
 </div>

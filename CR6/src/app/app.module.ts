@@ -11,6 +11,7 @@ import { MenuPageComponent } from './menu-page/menu-page.component';
 import { DishDetailsComponent } from './dish-details/dish-details.component';
 import { CartComponent } from './cart/cart.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {HashLocationStrategy,Location,LocationStrategy} from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

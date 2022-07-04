@@ -1,3 +1,13 @@
 .copyright {
     margin: 0;
 }
+
+.social {
+    gap: 5rem;
+}
+
+@media screen and (max-width:480px) {
+    .social {
+        gap: 0.5rem;
+    }
+}

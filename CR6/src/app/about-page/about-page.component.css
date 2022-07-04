@@ -3,7 +3,13 @@
 }
 
 .about-img {
-    width: 500px;
-    height: 500px;
-    margin-top: 7%;
+    width: 45rem;
+    height: 30rem;
+}
+
+@media screen and (max-width:1000px) {
+    .about-img {
+        width: 100%;
+        margin-bottom: 7%;
+    }
 }

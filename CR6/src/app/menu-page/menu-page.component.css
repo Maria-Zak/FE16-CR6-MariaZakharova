@@ -10,3 +10,11 @@ button {
     padding: 10px;
     margin: 0;
 }
+
+.card-img-top {
+    object-fit: cover;
+}
+
+.card {
+    height: max-content;
+}
