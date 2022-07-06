@@ -16,5 +16,13 @@ button {
 }
 
 .card {
-    height: max-content;
+    height: 30rem;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    bottom: 0;
 }
